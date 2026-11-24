@@ -136,7 +136,7 @@ def save_catalog(master: bytes, catalog: dict) -> None:
 
 def slug(text: str) -> str:
     s = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
-    return s or "item"
+    return s or "item-" + secrets.token_hex(3)
 
 
 def unique_id(catalog: dict, base: str) -> str:
