@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<title>參考資料</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<main id="gate" class="gate">
+  <form class="lock-card" id="unlock-form" autocomplete="off" novalidate>
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="10.5" width="16" height="10" rx="2.5"></rect>
+        <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"></path>
+        <circle cx="12" cy="15.5" r="1.4" fill="currentColor" stroke="none"></circle>
+      </svg>
+    </div>
+    <h1>參考資料</h1>
+    <p class="sub">此站內容已加密，請輸入密碼</p>
+
+    <div class="field">
+      <input id="pw" type="password" placeholder="密碼" autocomplete="current-password" spellcheck="false" autofocus>
+      <button id="toggle-pw" class="ghost small" type="button">顯示</button>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" id="remember">
+      <span>在此裝置記住（關閉瀏覽器後清除）</span>
+    </label>
+
+    <button class="primary" id="unlock-btn" type="submit">解鎖</button>
+    <p class="msg" id="gate-msg" role="status"></p>
+  </form>
+</main>
+
+<main id="app" class="app" hidden>
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <span>參考資料</span>
+    </div>
+    <div class="tools">
+      <input id="q" class="search" type="search" placeholder="搜尋…" aria-label="搜尋" spellcheck="false">
+      <button id="lock" class="ghost" type="button">鎖定</button>
+    </div>
+  </header>
+
+  <div class="content">
+    <section class="group" id="group-pdf">
+      <h2>PDF 文件 <span class="count" id="pdf-count"></span></h2>
+      <div class="grid" id="pdf-list"></div>
+      <p class="empty" id="pdf-empty" hidden>尚無文件</p>
+    </section>
+
+    <section class="group" id="group-link">
+      <h2>相關連結 <span class="count" id="link-count"></span></h2>
+      <div class="grid" id="link-list"></div>
+      <p class="empty" id="link-empty" hidden>尚無連結</p>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <span id="updated"></span>
+    <span>AES-256-GCM 加密 · 僅在本機瀏覽器解密</span>
+  </footer>
+</main>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
