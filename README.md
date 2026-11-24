@@ -36,6 +36,16 @@ git commit -m "update materials"
 git push
 ```
 
+## 部署到 Cloudflare Pages（含 Email 登入驗證）
+
+需要一組 API Token（權限：Cloudflare Pages — Edit、Access: Apps and Policies — Edit、Access: Organizations, Identity Providers, and Groups — Edit、Account Settings — Read），存成 `~/.cf-scidata-token`。
+
+```bash
+./tools/deploy-cf.sh      # 上傳並確保 Access 規則存在（可重複執行）
+```
+
+完成後網址是 `https://scidata-refs.pages.dev`，未登入會被導向 Cloudflare Access 的 Email 驗證碼頁面。
+
 ## 結構
 
 ```
